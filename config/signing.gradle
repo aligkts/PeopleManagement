@@ -1,0 +1,51 @@
+task prepareKeystoreFiles {
+    doLast {
+        createDir("keystore")
+
+        createKeystoreAndProperties(
+                "KEYSTORE_PROPERTIES_PEOPLE_BASE64",
+                "keystore/people-keystore.properties",
+                "KEYSTORE_PEOPLE_BASE64",
+                "keystore/people.keystore",
+        )
+    }
+}
+
+static void createKeystoreAndProperties(String propEnvName, String propFileName, String keystoreEnvName, String keystoreFileName) {
+    def keystorePropertiesBase64 = System.getenv(propEnvName)
+    def keystoreFileBase64 = System.getenv(keystoreEnvName)
+
+    if (keystoreFileBase64 != null && keystorePropertiesBase64 != null) {
+        def fileMap = [
+                "$propFileName"    : keystorePropertiesBase64,
+                "$keystoreFileName": keystoreFileBase64
+        ]
+
+        fileMap.each { entry ->
+            base64ToFile(entry.key, entry.value)
+            println "$entry.key is generated"
+        }
+    } else {
+        println "Couldn't generate keystore files. '$propFileName' and '$keystoreFileName'"
+    }
+}
+
+static void base64ToFile(String fileName, String base64) {
+    def command = "echo $base64 | base64 --decode > $fileName"
+    def proc = ['bash', '-c', command].execute()
+    proc.waitFor()
+}
+
+static String fileToBase64(String fileName) {
+    def command = "openssl base64 -A -in ${fileName}"
+    def proc = command.execute()
+    proc.waitFor()
+
+    return proc.in.text
+}
+
+static void createDir(String dirName) {
+    def command = "mkdir $dirName"
+    def proc = ['bash', '-c', command].execute()
+    proc.waitFor()
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">People Management</string>
+
+
+    <string name="general_yes">Ja</string>
+    <string name="general_no">Nein</string>
+    <string name="unknown_error">Unknown Error</string>
+</resources>

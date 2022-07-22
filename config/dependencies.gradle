@@ -1,0 +1,63 @@
+ext {
+
+    compiler = [
+            java  : JavaVersion.VERSION_11,
+            kotlin: '1.7.10'
+    ]
+
+    android = [
+            minSdk    : 21,
+            targetSdk : 32,
+            compileSdk: 32
+    ]
+
+    application = [
+            id                       : 'com.aligkts.peoplemanagement',
+            versionCode              : 1,
+            versionName              : "1.0.0"
+    ]
+
+    version = [
+            gradle               : '7.2.1',
+            constraintLayout     : '2.1.4',
+            fragment             : '1.4.0',
+            lifecycle            : '2.4.0',
+            lifecycleExtension   : '2.2.0',
+            androidKtx           : '1.8.0',
+            recyclerview         : '1.2.1',
+            material             : '1.6.1',
+            desugarVersion       : '1.1.5'
+    ]
+
+    dependency = [
+            kotlinn = [
+                    "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$compiler.kotlin"
+            ],
+
+            androidx = [
+                    "androidx.recyclerview:recyclerview:$version.recyclerview",
+                    "androidx.core:core-ktx:$version.androidKtx",
+                    "androidx.fragment:fragment-ktx:$version.fragment",
+                    "androidx.constraintlayout:constraintlayout:$version.constraintLayout"
+            ],
+
+            lifecycle = [
+                    "androidx.lifecycle:lifecycle-runtime-ktx:$version.lifecycle",
+                    "androidx.lifecycle:lifecycle-extensions:$version.lifecycleExtension",
+                    "androidx.lifecycle:lifecycle-viewmodel-ktx:$version.lifecycle"
+            ],
+
+            commonKapt = [
+                    "androidx.lifecycle:lifecycle-common-java8:$version.lifecycle"
+            ],
+
+            material = [
+                    "com.google.android.material:material:$version.material"
+            ],
+
+            desugar = [
+                    "com.android.tools:desugar_jdk_libs:$version.desugarVersion",
+            ]
+    ]
+
+}

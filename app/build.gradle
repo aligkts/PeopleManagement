@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+apply from: "$rootDir/config/common.gradle"
+
+android {
+    def ext = rootProject.extensions.ext
+    compileSdkVersion ext.android.compileSdk
+
+    defaultConfig {
+        applicationId ext.application.id
+        versionCode ext.application.versionCode
+        versionName ext.application.versionName
+
+        minSdk ext.android.minSdk
+        targetSdk ext.android.targetSdk
+    }
+    defaultConfig {
+
+    }
+    signingConfigs {
+        release
+    }
+
+    buildTypes {
+        release {
+            buildConfigField 'Boolean', "ENABLE_LOG", "false"
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility ext.compiler.java
+        targetCompatibility ext.compiler.java
+    }
+
+    kotlinOptions {
+        jvmTarget = compiler.java
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation kotlinn
+    implementation androidx
+    implementation lifecycle
+    implementation material
+    coreLibraryDesugaring desugar
+
+    kapt commonKapt
+    kaptTest commonKapt
+}

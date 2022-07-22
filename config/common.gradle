@@ -1,0 +1,7 @@
+android {
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "people-${variant.getFlavorName().toLowerCase()}-${variant.buildType.name.toLowerCase()}-v${android.defaultConfig.versionName}.apk"
+        }
+    }
+}
