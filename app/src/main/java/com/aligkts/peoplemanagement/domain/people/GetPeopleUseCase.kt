@@ -17,19 +17,7 @@ class GetPeopleUseCase(
     }
 
     data class Params(
-        val next: String?,
+        val next: Int?,
         val callback: FetchCompletionHandler
     )
-
-    /*override fun invoke(fetchResponse: FetchResponse?, fetchError: FetchError?) {
-        if (fetchSuccess(fetchResponse, fetchError)) {
-            fetchResponse?.let {
-                peopleUiMapper.map(it)
-            }
-        } else {
-            fetchError?.let {
-                val errorMessage = it.errorDescription
-            }
-        }
-    }*/
 }

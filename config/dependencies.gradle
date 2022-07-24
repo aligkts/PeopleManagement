@@ -20,6 +20,7 @@ ext {
     version = [
             gradle               : '7.2.1',
             constraintLayout     : '2.1.4',
+            swipeRefreshLayout     : '1.1.0',
             fragment             : '1.4.0',
             lifecycle            : '2.4.0',
             lifecycleExtension   : '2.2.0',
@@ -38,7 +39,8 @@ ext {
                     "androidx.recyclerview:recyclerview:$version.recyclerview",
                     "androidx.core:core-ktx:$version.androidKtx",
                     "androidx.fragment:fragment-ktx:$version.fragment",
-                    "androidx.constraintlayout:constraintlayout:$version.constraintLayout"
+                    "androidx.constraintlayout:constraintlayout:$version.constraintLayout",
+                    "androidx.swiperefreshlayout:swiperefreshlayout:$version.swipeRefreshLayout"
             ],
 
             lifecycle = [

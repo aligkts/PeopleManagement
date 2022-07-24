@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="error_color">#F44336</color>
 
     <color name="black_12">#1b000000</color>
     <color name="button_default_background_progress">@color/black_12</color>

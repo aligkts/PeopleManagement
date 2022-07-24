@@ -11,7 +11,7 @@ class PeopleRepository(
     private val dataSource: DataSource
 ) {
 
-    fun fetchPeople(next: String?, completionHandler: FetchCompletionHandler) {
-        dataSource.fetch(next, completionHandler)
+    fun fetchPeople(next: Int?, completionHandler: FetchCompletionHandler) {
+        dataSource.fetch(next.toString(), completionHandler)
     }
 }
