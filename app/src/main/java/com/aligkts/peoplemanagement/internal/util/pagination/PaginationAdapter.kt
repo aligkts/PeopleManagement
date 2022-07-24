@@ -1,13 +1,10 @@
 package com.aligkts.peoplemanagement.internal.util.pagination
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aligkts.peoplemanagement.R
 import com.aligkts.peoplemanagement.base.BaseViewHolder
 import com.aligkts.peoplemanagement.databinding.RecyclerviewItemLoadingFooterBinding
-import com.aligkts.peoplemanagement.databinding.RecyclerviewItemPeopleBinding
 
 /**
  * Created by Ali Göktaş on 24.07.2022.

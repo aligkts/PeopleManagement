@@ -3,7 +3,6 @@ package com.aligkts.peoplemanagement.scene.main.peoplelist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aligkts.peoplemanagement.base.BaseViewHolder
 import com.aligkts.peoplemanagement.databinding.RecyclerviewItemPeopleBinding
 import com.aligkts.peoplemanagement.internal.util.pagination.PaginationAdapter
 import com.aligkts.peoplemanagement.view.model.PeopleItemUiModel

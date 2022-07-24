@@ -12,7 +12,6 @@ import com.aligkts.peoplemanagement.internal.util.extension.show
 import com.aligkts.peoplemanagement.internal.util.pagination.PaginationScrollListener
 import com.aligkts.peoplemanagement.scene.main.peoplelist.*
 import com.aligkts.peoplemanagement.view.model.TextMessageUiModel
-import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
