@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aligkts.peoplemanagement.base.BaseViewHolder
 import com.aligkts.peoplemanagement.databinding.RecyclerviewItemLoadingFooterBinding
+import com.aligkts.peoplemanagement.internal.util.CommonValue.ONE
+import com.aligkts.peoplemanagement.internal.util.CommonValue.ZERO
 
 /**
  * Created by Ali Göktaş on 24.07.2022.
@@ -41,24 +43,24 @@ abstract class PaginationAdapter<D> : RecyclerView.Adapter<RecyclerView.ViewHold
     override fun getItemCount() = dataList.size
 
     override fun getItemViewType(position: Int) =
-        if (position == dataList.size - 1 && isLoadingViewAdded)
+        if (position == dataList.size - ONE && isLoadingViewAdded)
             LOADING_VIEW_TYPE
         else
             ITEM_VIEW_TYPE
 
     fun removeLoadingViewFooter() {
-        if (isLoadingViewAdded && dataList.size > 0) {
+        if (isLoadingViewAdded && dataList.size > ZERO) {
             isLoadingViewAdded = false
-            dataList.removeAt(dataList.size - 1)
+            dataList.removeAt(dataList.size - ONE)
             notifyItemRemoved(dataList.size)
         }
     }
 
     protected fun addLoadingViewFooter(emptyDataObject: D) {
-        if (dataList.size > 0) {
+        if (dataList.size > ZERO) {
             isLoadingViewAdded = true
             dataList.add(emptyDataObject)
-            notifyItemInserted(dataList.size - 1)
+            notifyItemInserted(dataList.size - ONE)
         }
     }
 
