@@ -5,4 +5,6 @@
     <string name="general_yes">Ja</string>
     <string name="general_no">Nein</string>
     <string name="unknown_error">Unknown Error</string>
+    <string name="empty_list_error">There is no item</string>
+    <string name="retry">Retry</string>
 </resources>

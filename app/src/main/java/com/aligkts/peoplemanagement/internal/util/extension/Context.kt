@@ -17,8 +17,3 @@ fun Context.toast(msg: String, duration: Int = Toast.LENGTH_SHORT) {
 fun Context.toast(@StringRes messageResId: Int, length: Int = Toast.LENGTH_SHORT) {
     toast(getString(messageResId), length)
 }
-
-/*
- * Loads drawable resource
- */
-fun Context.loadDrawable(@DrawableRes res: Int): Drawable? = ContextCompat.getDrawable(this, res)

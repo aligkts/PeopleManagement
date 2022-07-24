@@ -44,7 +44,7 @@ class DataSource {
         initializeData()
     }
 
-    public fun fetch(next: String?, completionHandler: FetchCompletionHandler) {
+    fun fetch(next: String?, completionHandler: FetchCompletionHandler) {
         val processResult = processRequest(next)
 
         Handler(Looper.getMainLooper()).postDelayed({
@@ -162,7 +162,7 @@ private object PeopleGen {
         val lastNamesCount = lastNames.size
         val firstName = firstNames[RandomUtils.generateRandomInt(range = 0 until firstNamesCount)]
         val lastName = lastNames[RandomUtils.generateRandomInt(range = 0 until lastNamesCount)]
-        return "${firstName} ${lastName}"
+        return "$firstName $lastName"
     }
 }
 
