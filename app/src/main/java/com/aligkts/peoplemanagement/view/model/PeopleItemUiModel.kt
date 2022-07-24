@@ -7,4 +7,8 @@ package com.aligkts.peoplemanagement.view.model
 data class PeopleItemUiModel(
     val id: String,
     val name: String
-)
+) {
+    constructor(): this("", "")
+
+    fun getCombinedIdName(): String = "$id. $name"
+}
