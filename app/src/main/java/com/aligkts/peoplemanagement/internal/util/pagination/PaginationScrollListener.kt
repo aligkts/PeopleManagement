@@ -2,6 +2,7 @@ package com.aligkts.peoplemanagement.internal.util.pagination
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aligkts.peoplemanagement.internal.util.CommonValue.ZERO
 
 abstract class PaginationScrollListener(
     private val layoutManager: LinearLayoutManager
@@ -27,6 +28,6 @@ abstract class PaginationScrollListener(
         val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
 
         return visibleItemCount + firstVisibleItemPosition >= totalItemCount &&
-                firstVisibleItemPosition >= 0
+                firstVisibleItemPosition >= ZERO
     }
 }
